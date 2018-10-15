@@ -2239,7 +2239,7 @@ public final class Widget {
 		Widget rsi = interfaceCache[id] = new Widget();
 	}
 
-
+//TODO Clean this up plz
 	public static void equipmentScreen(GameFont[] wid) {
 		Widget Interface = Widget.interfaceCache[1644];
 		addButton(19144, 140, "Show Equipment Stats");
@@ -2264,6 +2264,9 @@ public final class Widget {
 		addText(15115, "Melee maxhit: 1", wid, 1, 0xe4a146, false, true);
 		addText(15116, "Ranged maxhit: 1", wid, 1, 0xe4a146, false, true);
 		addText(15117, "Magic maxhit: 1", wid, 1, 0xe4a146, false, true);
+		
+		addText(16527, "Ranged Strenght: 0.0", wid, 1, 0xe4a146, false, true);
+		addText(16528, "Prayer: 0.0", wid, 1, 0xe4a146, false, true);
 
 		for (int i = 1675; i <= 1684; i++) {
 			textSize(i, wid, 1);
@@ -2271,7 +2274,7 @@ public final class Widget {
 		textSize(1686, wid, 1);
 		textSize(1687, wid, 1);
 		addChar(15125);
-		tab.totalChildren(47);
+		tab.totalChildren(49);
 		tab.child(0, 15107, 4, 20);
 		tab.child(1, 15210, 476, 29);
 		tab.child(2, 15211, 476, 29);
@@ -2288,12 +2291,12 @@ public final class Widget {
 		tab.child(11, 1682, 20, 192);
 		tab.child(12, 1683, 20, 207);
 		tab.child(13, 1684, 20, 221);
-		tab.child(14, 1686, 20, 262);
+		tab.child(14, 1686, 20, 255);//Melee str
 		tab.child(15, 15125, 170, 200);
 		tab.child(16, 15112, 16, 55);
-		tab.child(17, 1687, 20, 276);
+		tab.child(17, 1687, 20, 269);//Magic Str
 		tab.child(18, 15113, 16, 147);
-		tab.child(19, 15114, 16, 248);
+		tab.child(19, 15114, 16, 241);//"Other Bonuses"
 		tab.child(20, 1645, 104 + 295, 149 - 52);
 		tab.child(21, 1646, 399, 163);
 		tab.child(22, 1647, 399, 163);
@@ -2323,6 +2326,9 @@ public final class Widget {
 		tab.child(44, 15115, 370, 260);
 		tab.child(45, 15116, 370, 275);
 		tab.child(46, 15117, 370, 290);
+		
+		tab.child(47, 16527, 20, 283);//ranged str
+		tab.child(48, 16528, 20, 297);//prayer bonus
 
 		for (int i = 1675; i <= 1684; i++) {
 			Widget rsi = interfaceCache[i];
