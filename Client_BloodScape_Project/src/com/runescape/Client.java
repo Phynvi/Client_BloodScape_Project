@@ -8564,12 +8564,17 @@ public class Client extends GameApplet {
 				secondLoginMessage = "characters. Try other combinations.";
 				return;
 			}
+			/**
+			 * TODO Check how the client check its version
+			 */
+			
 			if (response == 30) {
 				firstLoginMessage = "Old client usage detected.";
 				secondLoginMessage = "Please download the latest one.";
-				MiscUtils.launchURL("http://osrspk.com");
+				MiscUtils.launchURL(Configuration.GAME_WEBSITE);
 				return;
 			}
+			
 			if (response == 3) {
 				firstLoginMessage = "";
 				secondLoginMessage = "Invalid username or password.";
