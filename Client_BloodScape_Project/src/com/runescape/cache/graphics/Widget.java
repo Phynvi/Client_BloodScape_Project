@@ -1,5 +1,8 @@
 package com.runescape.cache.graphics;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import com.runescape.Client;
 import com.runescape.Configuration;
 import com.runescape.cache.FileArchive;
@@ -280,6 +283,28 @@ public final class Widget {
 				}
 			}
 		}
+		 //interface id dump to see unused ids	
+		if(Configuration.INTERFACE_DUMP){
+			File fileDumpDir= new File(System.getProperty("user.dir")+"/interfaceDump.txt");
+			try(BufferedWriter interfaceWriter = new BufferedWriter(new FileWriter(fileDumpDir));){
+				int index = 0;
+				for(Widget w : interfaceCache){
+					
+					if(w == null || w.id == -1 || w.id == 0){
+						System.out.println("interfaceCache index:"+index);
+						interfaceWriter.write("\n interfaceCache index:"+index);
+					}					
+					index++;		
+				}
+				
+			}catch(Exception e){
+				e.printStackTrace();
+			}
+		}
+		
+		
+		
+		
 		interfaceLoader = interfaces;
 		clanChatTab(textDrawingAreas);
 		configureLunar(textDrawingAreas);

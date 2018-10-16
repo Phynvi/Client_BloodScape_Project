@@ -15,6 +15,11 @@ public final class Configuration {
 	 * Sends client-related debug messages to the client output stream
 	 */
 	public static boolean client_debug = true;
+	
+	/**
+	 * Does unused interface id dump into a txt file
+	 */
+	public static final boolean INTERFACE_DUMP = false;
 
 	/**
 	 * The address of the server that the client will be connecting to
@@ -26,6 +31,8 @@ public final class Configuration {
 	public static int server_port = 43595;
 	
 	public static final int CLIENT_VERSION = 3;
+	
+	public static final String GAME_WEBSITE = "NONE for now";
 
 	public static final String CACHE_DIRECTORY = "./Cache/";//System.getProperty("user.home") + File.separator + "OSRSPKV"+CLIENT_VERSION+"/";
 	
